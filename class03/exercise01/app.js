@@ -37,11 +37,66 @@ if (cel < 10){
 }
 farToCel(19);
 
+
 // 2. write a function "sum" that will take a parameter array of numbers and print out the largest number in the array
 
-var myArray = [10, 20, 30, 40];
-function addNums (){
-  for (var i = 0; i < myArray.length; i++){
-    var sum = 
+var array = [10, 20, 30, 40];
+function sumOfNumbers (arr){
+  var sum = 0;
+  for (var i in arr) {
+    sum += arr[i];
+
   }
+return sum;
+}
+
+var total = sumOfNumbers (array);
+console.log(total);
+
+// 3. write a function "greatestNumber" that will take a parameter array of numbers and print out the largest number in the array
+
+var myArray = [10, 20, 30, 40];
+function greatestNumber(arr){
+  var largest = 0;
+  for (var i in arr) {
+    var currentNumber = arr[i];
+    if (currentNumber > largest){
+      largest = currentNumber;
+    }
+
+  }
+return largest;
+}
+
+var greatest = greatestNumber (array);
+console.log(greatest);
+
+// 4. Write a function charFreq() that takes a string and builds a frequency listing of the characters contained in it. (hint: http://www.w3schools.com/jsref/jsref_charat.asp)
+
+var myString = "hello im ashlen ";
+
+function charFreq(str){
+
+  var myCharacters = {};
+
+
+    for (var i = 0; i < str.length; i++) {
+      var currentChar = str.charAt(i);
+
+      if (myCharacters[currentChar] === undefined){
+        myCharacters[currentChar] = 0;
+      }
+
+      myCharacters[currentChar]++;
+    }
+
+    return myCharacters;
+
+}
+
+var frequency = charFreq(myString);
+console.log(frequency);
+
+for (var j in frequency){
+  console.log(j + ": " + frequency[j]);
 }
